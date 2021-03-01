@@ -10,6 +10,4 @@ insert into years(name,year) values('Anthony and Cleopatra',1606);
 
 
 
-git clone --branch 5.3.0-v1.2.1 \
-https://github.com/confluentinc/training-administration-src.git \
-confluent-admin
+git clone --branch 5.3.0-v1.2.1 https://github.com/confluentinc/training-administration-src.git confluent-admin
