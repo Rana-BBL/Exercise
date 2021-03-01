@@ -7,3 +7,9 @@ insert into years(name,year) values('Merchant of Venice',1595);
 insert into years(name,year) values('Othello',1604);
 insert into years(name,year) values('Romeo and Juliette',1594);
 insert into years(name,year) values('Anthony and Cleopatra',1606);
+
+
+
+git clone --branch 5.3.0-v1.2.1 \
+https://github.com/confluentinc/training-administration-src.git \
+confluent-admin
