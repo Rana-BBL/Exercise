@@ -15,3 +15,5 @@ git clone --branch 5.3.0-v1.2.1 https://github.com/confluentinc/training-adminis
 kafka-avro-console-consumer --bootstrap-server kafka-1:9092, kafka-2:9092 --property schema.registry.url=http://schema-registry:8081 --from-beginning --topic shakespeare_years
 
 curl -s -X POST -H "Content-Type: application/json" --data '{"name": "File-Sink-Connector","config": {"topics": "shakespeare_years","connector.class":"org.apache.kafka.connect.file.FileStreamSinkConnector","value.converter":"io.confluent.connect.avro.AvroConverter","value.converter.schema.registry.url":"http://schema-registry:8081","file": "data/test.sink.txt"}}' http://connect:8083/connectors
+
+$ NS=io.confluent.monitoring.clients.interceptor && kafka-producer-perf-test --topic tune --num-records 10000000 --record-size 100 --throughput 1000 --producer-props bootstrap.servers=kafka-1:9092,kafka-2:9092 interceptor.classes=${NS}.MonitoringProducerInterceptor
